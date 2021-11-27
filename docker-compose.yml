@@ -1,0 +1,99 @@
+version: '3.3'
+services:
+  mysqldb:
+    image: mysql:8.0
+    restart: always
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: 'logins'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+
+    volumes:
+      - ./BDD/:/docker-entrypoint-initdb.d
+    networks:
+      testing_net:
+        ipv4_address: 172.28.1.10
+                
+
+  php-apache-environment:
+    container_name: php-apache
+    build:
+      context: apache
+      dockerfile: Dockerfile
+    image: apache-server:latest
+    environment:
+        - URL='${URL_SERVER}'
+    volumes:
+      - ./Lang:/var/www/html/
+    ports:
+      - 80:80
+    links:
+      - mysqldb
+      
+    networks:
+      testing_net:
+        ipv4_address: 172.28.1.11 
+        
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    links:
+      - mysqldb
+    environment:
+      PMA_HOST: mysqldb
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8081:801
+    networks:
+      testing_net:
+        ipv4_address: 172.28.1.13
+        
+
+  login-server:
+    container_name: login-server
+    build:
+      context: starloco
+      dockerfile: Dockerfile
+    image: login-server:latest
+    ports:
+      - 450:450
+      - 666:666
+    depends_on:
+      - mysqldb
+    networks:
+      testing_net:
+        ipv4_address: 172.28.1.12
+        
+        
+  game-server:
+    container_name: game-server
+    build:
+      context: starloco-login
+      dockerfile: Dockerfile
+    image: game-server:latest
+    env_file: .env
+    ports:
+      - 5555:5555
+    links:
+      - login-server
+    networks:
+      testing_net:
+        ipv4_address: 172.28.1.15
+networks:
+    testing_net:
+        ipam:
+            driver: "default"
+            config:
+                - subnet: 172.28.0.0/16
+volumes:
+  my-db:

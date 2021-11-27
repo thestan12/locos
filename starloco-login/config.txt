@@ -1,0 +1,26 @@
+## Fichier de configuration pour StarLoco par Locos ##
+
+## Server information : 
+SERVER_ID = 1
+SERVER_KEY = jivaa
+CONFIG_ID = 1
+DEBUG = false
+USE_LOG = true
+SUBSCRIBER = false
+PUB1 = 
+PUB2 = 
+PUB3 = 
+START_PLAYER = 164,298
+ALL_ZAAP = true
+ALL_EMOTE = true
+DELAY_DEBLO = 3600000
+HEROIC = false
+HALLOWEEN = false
+MESSAGE = Bienvenue !
+CRYPT = false
+## Server rate : 
+RATE_XP = 1
+RATE_DROP = 1
+RATE_JOB = 1
+RATE_KAMAS = 1
+RATE_FM = 1
