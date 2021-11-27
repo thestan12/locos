@@ -1,0 +1,15 @@
+Exception in thread "main" java.lang.RuntimeException: java.lang.ClassNotFoundException: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+	at com.zaxxer.hikari.util.UtilityElf.createInstance(UtilityElf.java:102)
+	at com.zaxxer.hikari.pool.PoolBase.initializeDataSource(PoolBase.java:321)
+	at com.zaxxer.hikari.pool.PoolBase.<init>(PoolBase.java:114)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:108)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at org.starloco.locos.database.Database.initializeConnection(Database.java:46)
+	at org.starloco.locos.kernel.Main.start(Main.java:54)
+	at org.starloco.locos.kernel.Main.main(Main.java:41)
+Caused by: java.lang.ClassNotFoundException: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:602)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at com.zaxxer.hikari.util.UtilityElf.createInstance(UtilityElf.java:89)
+	... 7 more

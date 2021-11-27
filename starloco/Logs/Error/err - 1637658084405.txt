@@ -1,0 +1,3 @@
+Exception in thread "Thread-0" java.lang.NullPointerException
+	at org.starloco.locos.kernel.Main.exit(Main.java:84)
+	at org.starloco.locos.kernel.Main$1.run(Main.java:26)
