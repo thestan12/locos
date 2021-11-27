@@ -25,17 +25,8 @@
 									<h5>2<sup>er</sup>&nbsp;&nbsp;&nbsp;étape :</h5><br />
 									
 									Ensuite, pour pouvoir vous connectez sur nos serveurs de jeux, il est obligatoire et indispensable de posséder le fichier de configuration.
-									Dans notre cas, nous vous proposons un installateur qui l'appliquera automatiquement ( selon le dossier que vous renseignerez ) :
+							
 									
-									<br /><br />
-									
-									<a href="<?php echo URL_INSTALLATEUR; ?>" class="btn btn-danger btn-block btn-md btn-bold margin-bottom-15"><i class="ion-social-windows"></i>  <i class="ion-ios7-cloud-download"></i> Télécharger l'installateur</a><br /><br />
-									
-									Pour les utilisateurs autres que Windows, nous vous mettons à disposition le téléchargement de la configuration uniquement afin de nous rejoindre sans problème :
-									
-									<br /><br />
-									
-									<a href="<?php echo URL_CONFIG; ?>" class="btn btn-danger btn-block btn-md btn-bold margin-bottom-15" download="config.xml"><i class="ion-social-apple"></i> <i class="ion-social-tux"></i> <i class="ion-ios7-cloud-download"></i> Télécharger la configuration</a><br /><br />
 									
 									<h5>3<sup>er</sup>&nbsp;&nbsp;&nbsp;étape :</h5><br />
 									<div class="alert alert-warning no-border-radius" role="alert">										

@@ -1,6 +1,5 @@
 FROM ubuntu:20.04
-ARG URL_SERVER
-ENV URL_SERVER="hello"
+
 RUN apt-get update
 RUN apt install -y openjdk-13-jre-headless && apt install -y openjdk-13-jdk-headless
 RUN apt-get install -y musl-dev

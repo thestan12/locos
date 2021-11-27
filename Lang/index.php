@@ -1,7 +1,5 @@
 <?php session_start(); 
 require_once('configuration/configuration.php');
-echo $_ENV["URL"];
-echo "salut";
 if(empty($_GET['page'])) 
 	$_GET['page'] = "index";
 	

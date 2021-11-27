@@ -22,7 +22,7 @@ error_reporting(E_ERROR | E_PARSE);
 								
 
 	//Http://www.***.**/... neccésaire dans l'URL ( compatibilité Firefox ).
-	define('URL_LAUNCHER_1_29', '#');
+	define('URL_LAUNCHER_1_29', 'https://www.mediafire.com/file/80a8kvokdptaltq/Dofus_1.29.zip/file');
 	define('URL_INSTALLATEUR', '#');
 	define('URL_CONFIG', '#');
 /** Serveurs **/

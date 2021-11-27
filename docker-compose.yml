@@ -28,7 +28,7 @@ services:
     build:
       context: apache
       dockerfile: Dockerfile
-    image: apache-server:latest
+    image: thestan12/apache-server:latest
     environment:
         - URL='${URL_SERVER}'
     volumes:
@@ -64,7 +64,7 @@ services:
     build:
       context: starloco
       dockerfile: Dockerfile
-    image: login-server:latest
+    image: thestan12/login-server:latest
     ports:
       - 450:450
       - 666:666
@@ -80,7 +80,7 @@ services:
     build:
       context: starloco-login
       dockerfile: Dockerfile
-    image: game-server:latest
+    image: thestan12/game-server:latest
     env_file: .env
     ports:
       - 5555:5555
