@@ -62,7 +62,7 @@ public class Main {
 
 
 
-        Runtime.getRuntime().addShutdownHook(new Threa                      d() {
+        Runtime.getRuntime().addShutdownHook(new Thread() {
             public void run() {
                 if (Main.isRunning) {
                     Main.isRunning = false;
